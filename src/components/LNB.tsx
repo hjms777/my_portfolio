@@ -16,17 +16,12 @@ const LNB = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = menuItems.map((item) =>
-        document.getElementById(item.id),
-      );
+      const sections = menuItems.map((item) => document.getElementById(item.id));
       const scrollPosition = window.scrollY + window.innerHeight / 2;
 
       for (const section of sections) {
         if (section) {
-          if (
-            scrollPosition >= section.offsetTop &&
-            scrollPosition < section.offsetTop + section.offsetHeight
-          ) {
+          if (scrollPosition >= section.offsetTop && scrollPosition < section.offsetTop + section.offsetHeight) {
             setActiveSection(section.id);
             break;
           }
@@ -38,10 +33,7 @@ const LNB = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleLinkClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    id: string,
-  ) => {
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     const element = document.getElementById(id);
     if (element) {
@@ -51,18 +43,14 @@ const LNB = () => {
 
   return (
     <nav className="fixed left-0 top-0 h-full w-48 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white p-4">
-      <h1 className="text-xl font-bold mb-8">Portfolio</h1>
+      <h1 className="text-xl font-bold mb-8">MinSung</h1>
       <ul>
         {menuItems.map((item) => (
           <li key={item.id} className="mb-4">
             <Link
               href={`#${item.id}`}
               onClick={(e) => handleLinkClick(e, item.id)}
-              className={`text-lg ${
-                activeSection === item.id
-                  ? 'font-bold text-teal-500 dark:text-teal-300'
-                  : ''
-              }`}
+              className={`text-lg ${activeSection === item.id ? 'font-bold text-teal-500 dark:text-teal-300' : ''}`}
             >
               {item.title}
             </Link>

@@ -2,8 +2,19 @@ import { projects } from '@/data/projects';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function ProjectDetailPage({ params }: { params: { id: string } }) {
-  const project = projects.find((p) => p.id === params.id);
+export async function generateStaticParams() {
+  return projects.map((project) => ({
+    id: project.id,
+  }));
+}
+
+interface PageProps {
+  params: Promise<{ id: string }>;
+}
+
+export default async function ProjectDetailPage({ params }: PageProps) {
+  const { id } = await params;
+  const project = projects.find((p) => p.id === id);
 
   if (!project) {
     return <div>Project not found</div>;
@@ -16,12 +27,7 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
       </Link>
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
         <div className="w-full h-64 sm:h-96 relative">
-          <Image
-            src={project.imageUrl}
-            alt={project.title}
-            fill
-            style={{ objectFit: 'cover' }}
-          />
+          <Image src={project.imageUrl} alt={project.title} fill style={{ objectFit: 'cover' }} />
         </div>
         <div className="p-6 sm:p-10">
           <h1 className="text-3xl sm:text-4xl font-bold mb-4">{project.title}</h1>

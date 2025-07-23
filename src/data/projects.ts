@@ -1,18 +1,18 @@
 export const projects = [
   {
-    id: 'project-a',
-    title: 'Project A: E-commerce Platform',
+    id: 'project1',
+    title: 'BSS 배터리 장치 관리 및 업체 관리 백오피스 개발',
     description:
       '주요 역할: 프론트엔드 개발 리드. React와 TypeScript를 사용하여 반응형 UI를 구축하고, Redux를 이용한 상태 관리를 담당했습니다. API 연동 및 성능 최적화를 통해 초기 로딩 속도를 50% 개선했습니다.',
     detailedDescription:
       '이 프로젝트는 최신 웹 기술을 활용하여 사용자 친화적인 이커머스 플랫폼을 구축하는 것을 목표로 했습니다. 주요 기능으로는 상품 목록, 상세 페이지, 장바구니, 결제 시스템이 포함됩니다. 성능 최적화를 위해 코드 분할 및 이미지 지연 로딩을 적용했으며, 그 결과 Lighthouse 점수가 20점 이상 향상되었습니다. 또한, Jest와 React Testing Library를 사용한 단위 및 통합 테스트를 통해 코드의 안정성을 확보했습니다.',
     imageUrl: 'https://placehold.co/600x400/EEE/31343C',
-    tags: ['React', 'TypeScript', 'Next.js', 'Redux', 'Jest'],
+    tags: ['Java', 'Spring Boot', 'MySQL', 'Vue.js'],
     githubUrl: 'https://github.com/hjms777',
     liveDemoUrl: null,
   },
   {
-    id: 'project-b',
+    id: 'project2',
     title: 'Project B: Corporate Website Renewal',
     description:
       '주요 역할: 풀스택 개발. Next.js를 활용하여 SEO에 최적화된 웹사이트를 구축했으며, Strapi CMS를 도입하여 콘텐츠 관리 효율성을 높였습니다. 사용자 인증 및 API 개발을 담당했습니다.',
@@ -24,7 +24,7 @@ export const projects = [
     liveDemoUrl: 'https://dev-portfolio-one.vercel.app/',
   },
   {
-    id: 'project-c',
+    id: 'project3',
     title: 'Project C: Mobile App Dashboard',
     description:
       '주요 역할: 프론트엔드 개발. Chart.js와 React를 사용하여 데이터 시각화 대시보드를 개발했습니다. 사용자가 복잡한 데이터를 쉽게 이해할 수 있도록 인터랙티브한 UI/UX를 구현하는 데 집중했습니다.',
