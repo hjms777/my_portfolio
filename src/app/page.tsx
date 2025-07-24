@@ -18,7 +18,7 @@ export default function HomePage() {
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="w-48 h-48 relative flex-shrink-0">
               <Image
-                src="/my_profile.jpg" // 프로필 사진 경로
+                src="https://lh3.googleusercontent.com/d/1wJHzpfn6O6QST3CtMel1sE6unLmiknbK" // 프로필 사진 경로
                 alt="Profile Picture"
                 className="rounded-full"
                 fill
