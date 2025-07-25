@@ -22,7 +22,7 @@ export default function HomePage() {
                 alt="Profile Picture"
                 className="rounded-full"
                 fill
-                style={{ objectFit: 'cover' }}
+                style={{ objectFit: 'cover', objectPosition: '50% 25%' }}
               />
             </div>
             <div className="text-center md:text-left">
@@ -58,10 +58,10 @@ export default function HomePage() {
               <Link key={index} href={`/project/${project.id}`}>
                 <div className="border rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 bg-white h-full">
                   <div className="w-full h-48 relative">
-                    <Image src={project.imageUrl} alt={project.title} fill style={{ objectFit: 'cover' }} />
+                    <Image src={project.imageUrls[0]} alt={project.title} fill style={{ objectFit: 'cover' }} />
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                    <h3 className="text-xl font-bold mb-2 text-gray-800">{project.title}</h3>
                     <p className="text-gray-700 mb-4 text-sm">{project.description}</p>
                     <div className="flex flex-wrap gap-2">
                       {project.tags.map((tag, tagIndex) => (
@@ -92,8 +92,8 @@ export default function HomePage() {
                 <div className="absolute w-4 h-4 bg-teal-500 rounded-full -left-2 mt-1.5"></div>
                 <p className="text-sm text-gray-500 dark:text-gray-400">{exp.period}</p>
                 <h3 className="text-xl font-bold mt-1">{exp.position}</h3>
-                <h4 className="text-lg font-semibold text-gray-700 dark:text-gray-300">{exp.company}</h4>
-                <ul className="mt-4 list-disc list-inside text-gray-600 dark:text-gray-300">
+                <h4 className="text-lg font-semibold">{exp.company}</h4>
+                <ul className="mt-4 list-disc list-inside">
                   {exp.tasks.map((task, taskIndex) => (
                     <li key={taskIndex}>{task}</li>
                   ))}
@@ -139,12 +139,31 @@ export default function HomePage() {
               </svg>
               github.com/hjms777
             </a>
+            {/* <a
+              href="https://naver.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center text-lg hover:text-teal-300 transition-colors"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6 mr-3"
+                fill="currentColor"
+                viewBox="0 0 459 459"
+              >
+                <g>
+                  <path d="M229.5,0C102.75,0,0,102.75,0,229.5S102.75,459,229.5,459,459,356.25,459,229.5,356.25,0,229.5,0ZM130.21,191.45a39.57,39.57,0,1,1,39.56-39.57A39.58,39.58,0,0,1,130.21,191.45ZM229.5,390a39.56,39.56,0,1,1,39.56-39.56A39.56,39.56,0,0,1,229.5,390Zm0-99.29a39.56,39.56,0,1,1,39.56-39.56A39.56,39.56,0,0,1,229.5,290.74Zm0-99.29a39.57,39.57,0,1,1,39.56-39.57A39.57,39.57,0,0,1,229.5,191.45Zm99.29,0a39.57,39.57,0,1,1,39.57-39.57A39.57,39.57,0,0,1,328.79,191.45Z" />
+                </g>
+              </svg>
+              tstory.blog
+            </a>*/}
+            {/*추후등록*/}
           </div>
         </div>
       </Section>
 
       <footer className="text-center text-xs text-gray-500 py-8">
-        <p>이 페이지는 Gemini CLI와 Claude를 사용하여 제작되었습니다.</p>
+        <p>이 페이지는 Gemini CLI와 Claude Code를 사용하여 제작되었습니다.</p>
       </footer>
     </main>
   );

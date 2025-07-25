@@ -1,36 +1,27 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 개발자 포트폴리오 웹사이트
 
-## Getting Started
+저의 포트폴리오를 담은 웹사이트입니다.
 
-First, run the development server:
+## 🌐 배포
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+현재 Vercel을 통해 배포되어 있으며, 아래 링크에서 확인할 수 있습니다:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**[https://minsung-portfolio.vercel.app/](https://minsung-portfolio.vercel.app/)**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠 기술 스택
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Next.js 15.4.2
+- React 19.1.0  
+- TypeScript
+- Tailwind
+- Framer Motion
 
-## Learn More
+## 🤖 개발 도구
 
-To learn more about Next.js, take a look at the following resources:
+이 프로젝트는 다음 AI 도구들의 도움을 받아 제작되었습니다:
+- **Gemini CLI**
+- **Claude Code**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📅 상태
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**2025년 7월 25일 현재 작업 중입니다.**

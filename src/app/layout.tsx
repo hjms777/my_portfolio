@@ -29,12 +29,12 @@ export const metadata: Metadata = {
       },
     ],
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Minsung_Portfolio',
-    description: 'my portfolio website',
-    images: ['/thumbnail.png'],
-  },
+  // twitter: {
+  //   card: 'summary_large_image',
+  //   title: 'Minsung_Portfolio',
+  //   description: 'my portfolio website',
+  //   images: ['/thumbnail.png'],
+  // },
 };
 
 export default function RootLayout({
