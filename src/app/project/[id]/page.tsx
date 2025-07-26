@@ -27,7 +27,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
       </Link>
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
         <ProjectImageSlider imageUrls={project.imageUrls} title={project.title} />
-        <div className="p-6 sm:p-10">
+        <div className="p-6 sm:p-10 h-80">
           <h1 className="text-3xl sm:text-4xl font-bold mb-4">{project.title}</h1>
           <div className="flex flex-wrap gap-2 mb-6">
             {project.tags.map((tag, tagIndex) => (

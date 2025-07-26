@@ -61,7 +61,7 @@ export default function ProjectImageSlider({ imageUrls, title }: ProjectImageSli
   }
 
   return (
-    <div {...handlers} className="w-full h-64 sm:h-96 relative overflow-hidden">
+    <div {...handlers} className="w-full h-80 sm:h-[35rem] relative overflow-hidden">
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
           key={currentImageIndex}
@@ -77,7 +77,7 @@ export default function ProjectImageSlider({ imageUrls, title }: ProjectImageSli
             src={imageUrls[currentImageIndex]}
             alt={title}
             fill
-            style={{ objectFit: 'cover' }}
+            style={{ objectFit: 'contain' }} // cover 사용시 비율이 딱 맞게 보여지지만 이미지 잘림
             priority={currentImageIndex === 0}
             draggable="false"
           />

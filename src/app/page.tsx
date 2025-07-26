@@ -57,10 +57,10 @@ export default function HomePage() {
             {projects.map((project, index) => (
               <Link key={index} href={`/project/${project.id}`}>
                 <div className="border rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 bg-white h-full">
-                  <div className="w-full h-48 relative">
+                  <div className="w-full h-80 relative">
                     <Image src={project.imageUrls[0]} alt={project.title} fill style={{ objectFit: 'cover' }} />
                   </div>
-                  <div className="p-6">
+                  <div className="p-6 h-52">
                     <h3 className="text-xl font-bold mb-2 text-gray-800">{project.title}</h3>
                     <p className="text-gray-700 mb-4 text-sm">{project.description}</p>
                     <div className="flex flex-wrap gap-2">
