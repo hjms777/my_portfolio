@@ -6,11 +6,7 @@ export const projects = [
       '주요 역할: 프론트엔드 개발 리드. React와 TypeScript를 사용하여 반응형 UI를 구축하고, Redux를 이용한 상태 관리를 담당했습니다. API 연동 및 성능 최적화를 통해 초기 로딩 속도를 50% 개선했습니다.',
     detailedDescription:
       '이 프로젝트는 최신 웹 기술을 활용하여 사용자 친화적인 이커머스 플랫폼을 구축하는 것을 목표로 했습니다. 주요 기능으로는 상품 목록, 상세 페이지, 장바구니, 결제 시스템이 포함됩니다. 성능 최적화를 위해 코드 분할 및 이미지 지연 로딩을 적용했으며, 그 결과 Lighthouse 점수가 20점 이상 향상되었습니다. 또한, Jest와 React Testing Library를 사용한 단위 및 통합 테스트를 통해 코드의 안정성을 확보했습니다.',
-    imageUrls: [
-      '/project3/bss_ui.png',
-      'https://placehold.co/600x400/blue/white',
-      'https://placehold.co/600x400/green/white',
-    ],
+    imageUrls: ['/project3/bss_ui.png', '/project3/bss_architecture.png', '/project3/bss_service.png'],
     tags: ['Java', 'Spring Boot', 'MySQL', 'Vue.js'],
     // githubUrl: 'https://github.com/hjms777',
   },
