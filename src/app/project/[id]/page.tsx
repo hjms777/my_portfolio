@@ -22,10 +22,10 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
   return (
     <div className="container mx-auto p-4 sm:p-8">
-      <Link href="/" className="text-teal-500 hover:underline mb-8 inline-block">
+      <Link href="/" className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 hover:underline mb-8 inline-block transition-colors">
         &larr; Back to Projects
       </Link>
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+      <div className="bg-white/95 dark:bg-gray-900/80 backdrop-blur-sm rounded-lg shadow-xl border border-indigo-100/60 dark:border-gray-600/50 overflow-hidden">
         <ProjectImageSlider imageUrls={project.imageUrls} title={project.title} />
         <div className="p-6 sm:p-10 h-80">
           <h1 className="text-3xl sm:text-4xl font-bold mb-4">{project.title}</h1>
@@ -33,7 +33,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             {project.tags.map((tag, tagIndex) => (
               <span
                 key={tagIndex}
-                className="bg-gray-200 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full"
+                className="bg-indigo-100 dark:bg-indigo-900/40 text-indigo-800 dark:text-indigo-300 text-xs font-semibold mr-2 px-3 py-1 rounded-full border border-indigo-200 dark:border-indigo-700"
               >
                 {tag}
               </span>

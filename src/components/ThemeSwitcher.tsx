@@ -21,7 +21,7 @@ export function ThemeSwitcher() {
       <div>
         <button
           type="button"
-          className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600"
+          className="inline-flex justify-center w-full rounded-lg border-2 border-gray-400 dark:border-indigo-600 shadow-md px-4 py-2 bg-gray-50 dark:bg-indigo-900/40 backdrop-blur-sm text-sm font-semibold text-black dark:text-indigo-300 hover:bg-gray-100 dark:hover:bg-indigo-900/60 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-indigo-900 focus:ring-indigo-400 transition-all duration-200"
           id="options-menu"
           aria-haspopup="true"
           aria-expanded="true"
@@ -46,7 +46,7 @@ export function ThemeSwitcher() {
 
       {isOpen && (
         <div
-          className="origin-top-right absolute right-0 mt-2 w-full rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-gray-800 z-10"
+          className="origin-top-right absolute right-0 mt-2 w-full rounded-lg shadow-xl bg-gray-50 dark:bg-gray-900/95 backdrop-blur-md border-2 border-gray-300 dark:border-indigo-800 focus:outline-none z-10"
           role="menu"
           aria-orientation="vertical"
           aria-labelledby="options-menu"
@@ -57,7 +57,7 @@ export function ThemeSwitcher() {
                 setTheme('light');
                 setIsOpen(false);
               }}
-              className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-700"
+              className="block w-full text-left px-4 py-2 text-sm font-medium text-gray-800 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-indigo-900/30 hover:text-gray-900 dark:hover:text-indigo-300 transition-colors duration-150"
               role="menuitem"
             >
               Light
@@ -67,7 +67,7 @@ export function ThemeSwitcher() {
                 setTheme('dark');
                 setIsOpen(false);
               }}
-              className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-700"
+              className="block w-full text-left px-4 py-2 text-sm font-medium text-gray-800 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-indigo-900/30 hover:text-gray-900 dark:hover:text-indigo-300 transition-colors duration-150"
               role="menuitem"
             >
               Dark
@@ -77,7 +77,7 @@ export function ThemeSwitcher() {
                 setTheme('system');
                 setIsOpen(false);
               }}
-              className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-700"
+              className="block w-full text-left px-4 py-2 text-sm font-medium text-gray-800 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-indigo-900/30 hover:text-gray-900 dark:hover:text-indigo-300 transition-colors duration-150"
               role="menuitem"
             >
               System
