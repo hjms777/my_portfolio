@@ -12,7 +12,7 @@ const Section = ({ children, id }: SectionProps) => {
   return (
     <motion.section
       id={id}
-      className="h-screen"
+      className="min-h-screen flex flex-col justify-center"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}

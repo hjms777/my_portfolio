@@ -1,4 +1,4 @@
-import LNB from '@/components/LNB';
+
 import { ThemeProvider } from '@/components/ThemeProvider';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
@@ -46,8 +46,7 @@ export default function RootLayout({
     <html lang="kr" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <LNB />
-          <main className="ml-48 p-4">{children}</main>
+          {children}
         </ThemeProvider>
       </body>
     </html>
