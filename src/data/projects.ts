@@ -1,4 +1,14 @@
-export const projects = [
+export interface Project {
+  id: string;
+  title: string;
+  description: string;
+  detailedDescription: string;
+  imageUrls: string[];
+  tags: string[];
+  githubUrl?: string;
+}
+
+export const projects: Project[] = [
   {
     id: 'project3',
     title: 'BSS 배터리 장치 관리 및 업체 관리 백오피스 개발',
