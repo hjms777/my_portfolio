@@ -105,8 +105,8 @@ export default function HomePage() {
           <SectionHeading>Featured Projects</SectionHeading>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <Link key={index} href={`/project/${project.id}`} className="block h-full">
+            {projects.map((project) => (
+              <Link key={project.id} href={`/project/${project.id}`} className="block h-full">
                 <Card className="h-full group hover:shadow-xl hover:border-primary/50 transition-all duration-300">
                   <div className="w-full h-64 relative overflow-hidden border-b border-border">
                     <Image
@@ -122,8 +122,8 @@ export default function HomePage() {
                     <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
                     <p className="text-muted-foreground mb-4 line-clamp-2 text-sm">{project.description}</p>
                     <div className="flex flex-wrap gap-2 mt-auto">
-                      {project.tags.slice(0, 3).map((tag, tagIndex) => (
-                        <Badge key={tagIndex} variant="outline" className="text-xs">
+                      {project.tags.slice(0, 3).map((tag) => (
+                        <Badge key={`${project.id}-${tag}`} variant="outline" className="text-xs">
                           {tag}
                         </Badge>
                       ))}
@@ -145,8 +145,8 @@ export default function HomePage() {
           <SectionHeading>Work Experience</SectionHeading>
 
           <div className="relative border-l-2 border-primary/20 ml-4 md:ml-0 space-y-12">
-            {experiences.map((exp, index) => (
-              <div key={index} className="relative pl-8 md:pl-12 group">
+            {experiences.map((exp) => (
+              <div key={`${exp.company}-${exp.period}`} className="relative pl-8 md:pl-12 group">
                 <div className="absolute w-4 h-4 bg-background border-2 border-primary rounded-full -left-[9px] top-1.5 group-hover:bg-primary transition-colors duration-300 shadow-[0_0_0_4px_rgba(var(--primary),0.1)]"></div>
 
                 <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
@@ -160,8 +160,8 @@ export default function HomePage() {
 
                 <Card className="p-6 bg-secondary/30 border-none">
                   <ul className="space-y-2">
-                    {exp.tasks.map((task, taskIndex) => (
-                      <li key={taskIndex} className="flex items-start text-muted-foreground">
+                    {exp.tasks.map((task) => (
+                      <li key={`${exp.company}-${exp.period}-${task}`} className="flex items-start text-muted-foreground">
                         <span className="mr-2 mt-1.5 w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0" />
                         <span>{task}</span>
                       </li>
@@ -210,7 +210,7 @@ export default function HomePage() {
       </Section>
 
       <footer className="text-center text-xs text-muted-foreground py-8 border-t border-border">
-        <p>Claude Code & Gemini on Antigravity 를 사용해서 제작했습니다.</p>
+        <p>이 프로젝트는 Codex를 중심으로 제작했으며, Claude Code와 Gemini on Antigravity도 함께 활용해봤습니다.</p>
       </footer>
     </div>
   );
