@@ -8,7 +8,7 @@ export default function HomeLayout({
     return (
         <>
             <LNB />
-            <main className="ml-48 p-4">{children}</main>
+            <main className="p-4 md:ml-48">{children}</main>
         </>
     );
 }
