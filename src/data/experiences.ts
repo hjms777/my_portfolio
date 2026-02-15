@@ -4,11 +4,11 @@ export const experiences = [
     position: 'Java Web Developer',
     period: '2023년 7월 - 현재',
     tasks: [
-      'Spring 기반 프로젝트 기능 개선 및 신규 개발',
-      '백오피스 RESTful API 개발 및 고도화',
-      'React, Next.js, Vue 프로젝트 유지보수',
-      '레거시 개선 및 기존 로직 유지보수 및 고도화',
-      '고객별 홈페이지 제작 업무',
+      '모빌리티 운영·정산·장치관리 백오피스/대시보드 개발',
+      '관리자 기능 (차량/회원/충전소/이력/알림) API 설계 구현 + 운영 화면 개발',
+      '기존 레거시 화면/로직 개선 및 요구사항 변경 대응',
+      'Spring Boot 기반 REST API, MySQL 쿼리 최적화/인덱싱, Swagger 문서화',
+      'React/Next/Vue 유지보수 (화면/상태/연동 로직 개선), Git 기반 협업',
     ],
   },
   /*{

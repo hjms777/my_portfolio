@@ -77,8 +77,22 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               )}
             </div>
 
-            <div className="prose prose-lg dark:prose-invert max-w-none text-muted-foreground leading-relaxed whitespace-pre-line">
-              {project.detailedDescription}
+            <div className="space-y-5">
+              {project.detailSections.map((section) => (
+                <section
+                  key={section.title}
+                  className="rounded-xl border border-border/60 bg-card/70 p-5 sm:p-6 shadow-sm"
+                >
+                  <h2 className="text-lg font-semibold text-foreground mb-3">{section.title}</h2>
+                  <ul className="space-y-2 ml-5 list-disc text-muted-foreground leading-relaxed">
+                    {section.items.map((item, itemIndex) => (
+                      <li key={`${section.title}-${itemIndex}`} className="pl-1">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              ))}
             </div>
           </div>
         </Card>

@@ -40,14 +40,20 @@ export default function HomePage() {
                   Kang Minsung
                 </h1>
                 <p className="text-xl text-muted-foreground leading-relaxed">
-                  호기심으로 나아가는 개발자, 강민성입니다.
+                  모빌리티 서비스 운영 환경에서 느린 지점과 불편한 흐름을 찾아 개선하는 백엔드 개발자 강민성입니다.
                 </p>
               </div>
 
               <p className="text-muted-foreground leading-relaxed">
-                IT 전반과 전자기기에 깊은 관심을 갖고, 시스템의 동작 원리를 탐구합니다.
-                반복적이고 복잡한 일을 자동화하고, 새로운 기술을 적극적으로 도입하여
-                더 나은 가치를 만들어내는 것을 즐깁니다.
+                대량 데이터 조회 지연, 복잡한 쿼리와 구조 문제를 원인부터 파고들어 스키마·인덱스·로직을 함께 조정하며 성능과 유지보수성을 끌어올려 왔습니다.
+              </p>
+
+              <p className="text-muted-foreground leading-relaxed">
+                REST API 설계와 문서화, 그리고 Socket 기반 연동까지 경험하며 서비스 안정성과 운영 효율을 높이는 일을 좋아합니다.
+              </p>
+
+              <p className="text-muted-foreground leading-relaxed">
+                팀과 같은 맥락을 공유하고, 변화하는 요구사항에도 흔들리지 않는 구조를 고민합니다.
               </p>
 
               <div className="flex flex-wrap gap-3 justify-center md:justify-start pt-4">
@@ -68,11 +74,11 @@ export default function HomePage() {
         <div className="py-20 max-w-5xl mx-auto">
           <SectionHeading>Technical Skills</SectionHeading>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <Card className="p-6 hover:-translate-y-1 transition-transform">
               <h3 className="text-xl font-bold mb-4 text-primary">BackEnd</h3>
               <div className="flex flex-wrap gap-2">
-                {['Java', 'Spring Boot', 'Nest.js'].map(skill => (
+                {['Java & Spring Boot', 'Nest.js & TypeScript'].map(skill => (
                   <Badge key={skill} variant="secondary">{skill}</Badge>
                 ))}
               </div>
@@ -81,16 +87,34 @@ export default function HomePage() {
             <Card className="p-6 hover:-translate-y-1 transition-transform">
               <h3 className="text-xl font-bold mb-4 text-primary">FrontEnd</h3>
               <div className="flex flex-wrap gap-2">
-                {['JavaScript', 'TypeScript', 'Vue.js', 'React', 'Next.js'].map(skill => (
+                {['Vue.js & React (Next.js)'].map(skill => (
                   <Badge key={skill} variant="secondary">{skill}</Badge>
                 ))}
               </div>
             </Card>
 
             <Card className="p-6 hover:-translate-y-1 transition-transform">
-              <h3 className="text-xl font-bold mb-4 text-primary">Database & Tools</h3>
+              <h3 className="text-xl font-bold mb-4 text-primary">Database</h3>
               <div className="flex flex-wrap gap-2">
-                {['MySQL', 'PostgreSQL', 'Oracle', 'Git', 'Docker'].map(skill => (
+                {['MySQL', 'PostgreSQL', 'Oracle'].map(skill => (
+                  <Badge key={skill} variant="secondary">{skill}</Badge>
+                ))}
+              </div>
+            </Card>
+
+            <Card className="p-6 hover:-translate-y-1 transition-transform">
+              <h3 className="text-xl font-bold mb-4 text-primary">Collaboration & DevOps</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Git/GitLab', 'Asana', 'AWS EC2', 'Docker'].map(skill => (
+                  <Badge key={skill} variant="secondary">{skill}</Badge>
+                ))}
+              </div>
+            </Card>
+
+            <Card className="p-6 hover:-translate-y-1 transition-transform">
+              <h3 className="text-xl font-bold mb-4 text-primary">AI Agent</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Codex', 'Claude'].map(skill => (
                   <Badge key={skill} variant="secondary">{skill}</Badge>
                 ))}
               </div>

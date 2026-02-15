@@ -2,7 +2,10 @@ export interface Project {
   id: string;
   title: string;
   description: string;
-  detailedDescription: string;
+  detailSections: {
+    title: string;
+    items: string[];
+  }[];
   imageUrls: string[];
   tags: string[];
   githubUrl?: string;
@@ -13,41 +16,128 @@ export const projects: Project[] = [
     id: 'project3',
     title: 'BSS 배터리 장치 관리 및 업체 관리 백오피스 개발',
     description:
-      '주요 역할: 프론트엔드 개발 리드. React와 TypeScript를 사용하여 반응형 UI를 구축하고, Redux를 이용한 상태 관리를 담당했습니다. API 연동 및 성능 최적화를 통해 초기 로딩 속도를 50% 개선했습니다.',
-    detailedDescription:
-      '이 프로젝트는 최신 웹 기술을 활용하여 사용자 친화적인 이커머스 플랫폼을 구축하는 것을 목표로 했습니다. 주요 기능으로는 상품 목록, 상세 페이지, 장바구니, 결제 시스템이 포함됩니다. 성능 최적화를 위해 코드 분할 및 이미지 지연 로딩을 적용했으며, 그 결과 Lighthouse 점수가 20점 이상 향상되었습니다. 또한, Jest와 React Testing Library를 사용한 단위 및 통합 테스트를 통해 코드의 안정성을 확보했습니다.',
+      'BSS 백오피스 원격 관제·제어 시스템을 구축해 웹에서 스테이션/슬롯 상태 확인과 문·전원·히터 원격 제어를 가능하게 했습니다.',
+    detailSections: [
+      {
+        title: '상황',
+        items: [
+          '외주로 구축된 BSS는 C# 기반 station-manager와 chargeBox 중심 구조로 동작했지만 웹 백오피스에서 실시간 상태 확인과 원격 제어가 불가능했습니다.',
+        ],
+      },
+      {
+        title: '과제',
+        items: [
+          '웹에서 스테이션/슬롯 상태를 실시간으로 확인하고 문·전원·히터를 원격 제어할 수 있는 end-to-end 제어 경로를 구축해야 했습니다.',
+          '운영/정지 판단 기준을 정립하고 제어 요청 및 상태 변경 이력을 추적 가능하게 설계해야 했습니다.',
+        ],
+      },
+      {
+        title: '행동 및 의사결정',
+        items: [
+          'Web(API) → WebSocket(세션) → chargeBox → station-manager 흐름으로 제어 파이프라인을 설계하고 구축했습니다.',
+          'WebSocket 연결/해제 이벤트와 heartbeat를 기준으로 운영/정지 상태 판단 로직을 반영했습니다.',
+          '즉시 ACK가 없는 구조를 고려해 제어 후 상태 재조회로 결과를 검증하도록 동선을 설계했습니다.',
+          '중복 제어를 줄이기 위해 UI 3초 대기 정책을 적용했습니다.',
+        ],
+      },
+      {
+        title: '결과',
+        items: [
+          '백오피스 웹에서 장비 상태를 실시간 확인하고 현장 중심 기능이던 제어(문/전원/히터)를 원격 수행할 수 있도록 통합했습니다.',
+          '제어 요청과 상태 이벤트 이력을 누적해 장애 발생 시 원인 추적이 가능한 운영 기반을 마련했습니다.',
+        ],
+      },
+    ],
     imageUrls: ['/project3/bss_ui.png', '/project3/bss_architecture.png', '/project3/bss_service.png'],
-    tags: ['Java', 'Spring Boot', 'MySQL', 'Vue.js'],
+    tags: ['Java', 'Spring Boot', 'WebSocket', 'MySQL'],
     // githubUrl: 'https://github.com/hjms777',
   },
   {
     id: 'project2',
     title: '백오피스 RESTful API 작업',
     description:
-      '주요 역할: 풀스택 개발. Next.js를 활용하여 SEO에 최적화된 웹사이트를 구축했으며, Strapi CMS를 도입하여 콘텐츠 관리 효율성을 높였습니다. 사용자 인증 및 API 개발을 담당했습니다.',
-    detailedDescription:
-      '기존의 노후된 기업 웹사이트를 현대적인 디자인과 기술 스택으로 전면 개편하는 프로젝트였습니다. Next.js의 서버 사이드 렌더링(SSR)과 정적 사이트 생성(SSG)을 활용하여 검색 엔진 최적화(SEO) 점수를 크게 향상시켰습니다. 콘텐츠 관리 시스템(CMS)으로 Strapi를 도입하여 마케팅 팀이 직접 콘텐츠를 수정하고 배포할 수 있도록 하여 운영 효율성을 높였습니다.',
+      'NestJS 기반 백오피스 API 서버를 구축해 인증/인가를 코드 레벨에서 강제하고, 공통 모듈로 중복 정책의 확산을 억제해 운영 안정성을 높였습니다.',
+    detailSections: [
+      {
+        title: '상황',
+        items: [
+          'NestJS로 전기 오토바이 셰어링 백오피스 API 서버를 구축할 때 admin/superAdmin 권한 분리가 필요했지만 초기에 정책 일관성이 낮을 수 있는 상황이었습니다.',
+          'admin, user, task API 서버가 병행되면서 중복 코드가 빠르게 늘어날 위험이 있었습니다.',
+        ],
+      },
+      {
+        title: '과제',
+        items: [
+          'admin/superAdmin 접근 정책을 코드 구조로 강제해 보안 실수를 줄여야 했습니다.',
+          '서버 분리 환경에서도 공통 도메인·DTO·외부 API 호출·응답 포맷·페이징은 재사용 가능한 구조로 유지해야 했습니다.',
+        ],
+      },
+      {
+        title: '행동 및 의사결정',
+        items: [
+          'JWT + Guard 기반으로 인증/인가 정책을 표준화하고 superAdmin 전용 기능(업체 관리 등)을 코드 분기와 구조로 분리했습니다.',
+          'adminAuth 모듈에서 토큰 만료/미존재 처리와 재발급 후 재요청 흐름을 표준화했습니다.',
+          'Monorepo(packages/admin, packages/user, packages/task)에서 common 패키지를 두어 공통 도메인 서비스를 통합했습니다.',
+        ],
+      },
+      {
+        title: '결과',
+        items: [
+          '권한 정책이 코드로 강제되어 민감 기능을 안정적으로 제한 운영할 수 있게 되었습니다.',
+          '공통 모듈 기반 운영으로 인증·응답 처리 일관성과 유지보수 효율이 개선되었습니다.',
+        ],
+      },
+    ],
     imageUrls: [
       'https://placehold.co/600x400/DDD/31343C',
       'https://placehold.co/600x400/CCC/31343C',
       'https://placehold.co/600x400/EEE/31343C',
     ],
-    tags: ['Next.js', 'TypeScript', 'MySQL', 'Swagger'],
+    tags: ['TypeScript', 'NestJS', 'JWT', 'Swagger', 'Monorepo'],
     // githubUrl: 'https://github.com/hjms777',
   },
   {
     id: 'project1',
     title: '신규 대시보드 개발 및 운행기록 통계 기록화',
     description:
-      '주요 역할: 프론트엔드 개발. Chart.js와 React를 사용하여 데이터 시각화 대시보드를 개발했습니다. 사용자가 복잡한 데이터를 쉽게 이해할 수 있도록 인터랙티브한 UI/UX를 구현하는 데 집중했습니다.',
-    detailedDescription:
-      '모바일 앱의 사용자 데이터를 분석하고 시각화하는 관리자용 대시보드를 개발했습니다. Chart.js를 커스터마이징하여 다양한 형태의 인터랙티브 차트를 구현했으며, 사용자가 원하는 데이터를 필터링하고 정렬할 수 있는 기능을 제공했습니다. Firebase를 백엔드로 사용하여 실시간 데이터 동기화를 구현했습니다.',
+      '운행기록 통계 대시보드에서 발생하던 조회 지연을 데이터 구조 개선과 쿼리/인덱스 최적화로 해결해 운영 화면 응답 속도를 5초에서 1초 이내로 단축했습니다.',
+    detailSections: [
+      {
+        title: '상황',
+        items: [
+          '수만 대 차량의 주행·에러 데이터를 다루는 대시보드에서 특정 조건 조회 시 5초 이상 지연되어 운영 대응이 어려웠습니다.',
+        ],
+      },
+      {
+        title: '과제',
+        items: [
+          '운영 화면에서 에러 상태와 최근 운행 기록을 빠르게 파악할 수 있어야 했고',
+          '대량 조인과 통계 쿼리를 유지하면서도 응답시간을 1초 이내로 줄여야 했습니다.',
+        ],
+      },
+      {
+        title: '행동 및 의사결정',
+        items: [
+          '병목을 단일 쿼리 조정이 아닌 데이터 적재 방식 및 조회 패턴 관점에서 재설계했습니다.',
+          'Terminal 테이블에 에러 상태값과 마지막 주행 기록 SeqNo 컬럼을 추가했습니다.',
+          '주기 보고 데이터(heartbeat) 수신 시 해당 컬럼을 일괄 갱신해 최신 상태를 유지하도록 개선했습니다.',
+          '복잡한 JOIN 경로와 인덱스를 재정비해 조회 경로를 단축했습니다.',
+        ],
+      },
+      {
+        title: '결과',
+        items: [
+          '조회 시간을 최대 5초 → 1초 이내로 단축했습니다.',
+          '운영 화면에서 핵심 상태를 즉시 확인할 수 있어 대응 효율과 유지보수성이 함께 개선되었습니다.',
+        ],
+      },
+    ],
     imageUrls: [
       'https://placehold.co/600x400/CCC/31343C',
       'https://placehold.co/600x400/EEE/31343C',
       'https://placehold.co/600x400/DDD/31343C',
     ],
-    tags: ['Java', 'Spring Boot', 'MySQL', 'Vue.js'],
+    tags: ['Java', 'Spring Boot', 'MySQL'],
     // githubUrl: 'https://github.com/hjms777',
   },
 ];
