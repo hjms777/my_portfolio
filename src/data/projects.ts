@@ -7,6 +7,7 @@ export interface Project {
     items: string[];
   }[];
   imageUrls: string[];
+  imageCaption?: string;
   tags: string[];
   githubUrl?: string;
 }
@@ -88,7 +89,8 @@ export const projects: Project[] = [
         ],
       },
     ],
-    imageUrls: ['/preparing.png'],
+    imageUrls: ['/project2/backoffice-rest-api.png'],
+    imageCaption: 'Codex로 생성된 이미지입니다.',
     tags: ['TypeScript', 'NestJS', 'JWT', 'Swagger', 'Monorepo'],
     // githubUrl: 'https://github.com/hjms777',
   },
@@ -128,7 +130,8 @@ export const projects: Project[] = [
         ],
       },
     ],
-    imageUrls: ['/preparing.png'],
+    imageUrls: ['/project1/driving-record-dashboard-planning.png'],
+    imageCaption: 'Codex로 생성된 이미지입니다.',
     tags: ['Java', 'Spring Boot', 'MySQL'],
     // githubUrl: 'https://github.com/hjms777',
   },

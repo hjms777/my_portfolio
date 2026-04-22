@@ -45,9 +45,14 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         </Link>
 
         <Card className="overflow-hidden border-none shadow-2xl bg-card/50 backdrop-blur-sm">
-          <div className="bg-secondary/30 border-b border-border">
+          <figure className="bg-secondary/30 border-b border-border">
             <ProjectImageSlider imageUrls={project.imageUrls} title={project.title} />
-          </div>
+            {project.imageCaption && (
+              <figcaption className="border-t border-border/60 bg-background/30 px-4 py-2 text-center text-xs text-muted-foreground">
+                {project.imageCaption}
+              </figcaption>
+            )}
+          </figure>
 
           <div className="p-8 sm:p-12">
             <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-8">

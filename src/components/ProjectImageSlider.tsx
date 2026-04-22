@@ -54,14 +54,14 @@ export default function ProjectImageSlider({ imageUrls, title }: ProjectImageSli
 
   if (!imageUrls || imageUrls.length === 0) {
     return (
-      <div className="w-full h-64 sm:h-96 relative bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+      <div className="relative flex aspect-video w-full items-center justify-center bg-gray-200 dark:bg-gray-700">
         <p className="text-gray-500">No image available</p>
       </div>
     );
   }
 
   return (
-    <div {...handlers} className="w-full h-80 sm:h-[35rem] relative overflow-hidden">
+    <div {...handlers} className="relative aspect-video w-full overflow-hidden">
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
           key={currentImageIndex}
