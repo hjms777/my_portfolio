@@ -180,7 +180,12 @@ export default function HomePage() {
                   </span>
                 </div>
 
-                <h4 className="text-lg font-semibold text-muted-foreground mb-4">{exp.company}</h4>
+                <div className="flex flex-wrap items-center gap-2 mb-4">
+                  <h4 className="text-lg font-semibold text-muted-foreground">{exp.company}</h4>
+                  <span className="text-xs font-medium text-muted-foreground/80 bg-secondary px-2.5 py-1 rounded-full">
+                    {exp.duration}
+                  </span>
+                </div>
 
                 <Card className="p-6 bg-secondary/30 border-none">
                   <ul className="space-y-2">

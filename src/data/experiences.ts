@@ -2,7 +2,8 @@ export const experiences = [
   {
     company: '더로카',
     position: 'Java Web Developer',
-    period: '2023년 7월 - 현재',
+    period: '2023년 7월 - 2026년 4월',
+    duration: '2년 10개월',
     tasks: [
       '모빌리티 운영·정산·장치관리 백오피스/대시보드 개발',
       '관리자 기능 (차량/회원/충전소/이력/알림) API 설계 구현 + 운영 화면 개발',
