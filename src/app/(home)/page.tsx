@@ -182,21 +182,25 @@ export default function HomePage() {
 
                 <div className="flex flex-wrap items-center gap-2 mb-4">
                   <h4 className="text-lg font-semibold text-muted-foreground">{exp.company}</h4>
-                  <span className="text-xs font-medium text-muted-foreground/80 bg-secondary px-2.5 py-1 rounded-full">
-                    {exp.duration}
-                  </span>
+                  {exp.duration ? (
+                    <span className="text-xs font-medium text-muted-foreground/80 bg-secondary px-2.5 py-1 rounded-full">
+                      {exp.duration}
+                    </span>
+                  ) : null}
                 </div>
 
-                <Card className="p-6 bg-secondary/30 border-none">
-                  <ul className="space-y-2">
-                    {exp.tasks.map((task) => (
-                      <li key={`${exp.company}-${exp.period}-${task}`} className="flex items-start text-muted-foreground">
-                        <span className="mr-2 mt-1.5 w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0" />
-                        <span>{task}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </Card>
+                {exp.tasks?.length ? (
+                  <Card className="p-6 bg-secondary/30 border-none">
+                    <ul className="space-y-2">
+                      {exp.tasks.map((task) => (
+                        <li key={`${exp.company}-${exp.period}-${task}`} className="flex items-start text-muted-foreground">
+                          <span className="mr-2 mt-1.5 w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0" />
+                          <span>{task}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </Card>
+                ) : null}
               </div>
             ))}
           </div>

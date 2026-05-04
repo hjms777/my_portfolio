@@ -1,4 +1,17 @@
-export const experiences = [
+interface Experience {
+  company: string;
+  position: string;
+  period: string;
+  duration?: string;
+  tasks?: string[];
+}
+
+export const experiences: Experience[] = [
+  {
+    company: '어글리랩',
+    position: 'Backend Engineer',
+    period: '2026년 5월 - 현재',
+  },
   {
     company: '더로카',
     position: 'Java Web Developer',
